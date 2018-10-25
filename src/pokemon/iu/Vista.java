@@ -28,11 +28,15 @@ public class Vista {
 	public JTextField tfPeso;
 	public JComboBox<Pokemon.Tipo> cbTipo;
 	public JButton cbAnadir;
-	public JButton btAnadir;
+	public JButton btNuevo;
 	public JScrollPane scrollPane;
 	public JList<Pokemon> lPokemons;
 	public DefaultListModel<Pokemon> mPokemons;
 	public JLabel lbImagen;
+	public JButton btEliminar;
+	public JButton btEditar;
+	public JButton btGuardar;
+	public JButton btCancelar;
 	
 	public Vista() {
 		ventana= new JFrame();
@@ -75,17 +79,17 @@ public class Vista {
 		cbTipo.setBounds(96, 47, 86, 20);
 		ventana.getContentPane().add(cbTipo);
 		
-		btAnadir = new JButton("A\u00F1adir");
-		btAnadir.setActionCommand("anadir");
-		btAnadir.addActionListener(new ActionListener() {
+		btNuevo = new JButton("Nuevo");
+		btNuevo.setActionCommand("nuevo");
+		btNuevo.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 			}
 		});
-		btAnadir.setBounds(96, 161, 89, 23);
-		ventana.getContentPane().add(btAnadir);
+		btNuevo.setBounds(93, 141, 89, 23);
+		ventana.getContentPane().add(btNuevo);
 		
 		scrollPane = new JScrollPane();
-		scrollPane.setBounds(208, 25, 216, 225);
+		scrollPane.setBounds(208, 25, 216, 173);
 		ventana.getContentPane().add(scrollPane);
 		
 		lPokemons = new JList();
@@ -100,6 +104,34 @@ public class Vista {
 		lbImagen.setBorder(new BevelBorder(BevelBorder.LOWERED, Color.PINK, null, null, null));
 		lbImagen.setBounds(10, 155, 72, 95);
 		ventana.getContentPane().add(lbImagen);
+		
+		btEliminar = new JButton("Eliminar");
+		btEliminar.setActionCommand("eliminar");
+		btEliminar.setBounds(335, 209, 89, 23);
+		ventana.getContentPane().add(btEliminar);
+		
+		btEditar = new JButton("Editar");
+		btEditar.setActionCommand("editar");
+		btEditar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+			}
+		});
+		btEditar.setBounds(93, 175, 89, 23);
+		ventana.getContentPane().add(btEditar);
+		
+		btGuardar = new JButton("Guardar");
+		btGuardar.setActionCommand("guardar");
+		btGuardar.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+			}
+		});
+		btGuardar.setBounds(96, 227, 89, 23);
+		ventana.getContentPane().add(btGuardar);
+		
+		btCancelar = new JButton("Cancelar");
+		btCancelar.setActionCommand("cancelar");
+		btCancelar.setBounds(195, 227, 89, 23);
+		ventana.getContentPane().add(btCancelar);
 		
 		ventana.setLocationRelativeTo(null);
 		ventana.repaint();

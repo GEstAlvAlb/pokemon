@@ -46,6 +46,8 @@ public class Modelo {
 
 	public void eliminar(Pokemon pokemon) {
 
+		String nombre= pokemon.getNombre();
+		pokemones.remove(nombre);
 	}
 
 	public void eliminarTodo() {
